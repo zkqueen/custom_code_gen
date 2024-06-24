@@ -1,0 +1,27 @@
+targets:
+  $default:
+    builders:
+      generators|annotations: # generators|annotations: Refers to the simple_generator builder when dealing with files annotated with annotations.
+        enabled: true
+
+builders:
+  generators:
+    target: ":generators" # Generator name
+    import: "package:generator/generators.dart"
+    builder_factories: ["generateJsonMethods"] # Builder name(BuilderOption) this is a definition
+    build_extensions: { ".dart": [".g.dart"] }
+    auto_apply: dependents
+    build_to: cache
+    applies_builders: ["source_gen|combining_builder"]
+
+
+#    参数解释
+#    1. import  指定生成器路径
+#    2. builder_factories :
+#      Lists the names of the builder method. In this case, it includes a single factory named
+#       “generateJsonMethods.” and it returns builder.
+#    3. build_extensions:
+#       Defines the file extensions for the input and output of the builder.
+#       It indicates that the builder processes .dart files and generates .g.part ‘(.g.part) file
+#       visibility based on the auto_apply key in build.yaml file’.
+#    4. auto_apply
