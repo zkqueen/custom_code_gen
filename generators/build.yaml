@@ -7,7 +7,7 @@ targets:
 builders:
   generators:
     target: ":generators" # Generator name
-    import: "package:generator/generators.dart"
+    import: "package:generators/generators.dart"
     builder_factories: ["generateJsonMethods"] # Builder name(BuilderOption) this is a definition
     build_extensions: { ".dart": [".g.dart"] }
     auto_apply: dependents

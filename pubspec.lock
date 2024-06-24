@@ -234,10 +234,10 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.0.0"
-  generator:
+  generators:
     dependency: "direct dev"
     description:
-      path: generator
+      path: generators
       relative: true
     source: path
     version: "1.0.0+1"
