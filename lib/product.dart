@@ -6,7 +6,7 @@ part 'product.g.dart';
 class Product {
   final String name;
 
-  Product(this.name);
+  const Product({required this.name});
 
   /// Connect the generated [_$ProductFromJson] function to the `fromJson`
   /// factory.

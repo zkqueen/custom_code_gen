@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      assets_generators:
+        generate_for:
+          - assets/**
+        options:
+          enable: true
+
+builders:
+  assets_generators:
+    import: 'package:assets_generators/assets_generators.dart'
+    builder_factories: [assetsBuilder]
+    build_extensions: {r"$package$": ["g.dart"]}
+    auto_apply: root_package
+    build_to: source
+    applies_builders: [ "source_gen|combining_builder" ]

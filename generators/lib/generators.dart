@@ -8,6 +8,6 @@ Builder generateJsonMethods(BuilderOptions options) {
   // Step 1
   return SharedPartBuilder(
     [JsonGenerator()], // Step 2
-    'kk', // Step 3
+    'json_generator', // Step 3
   );
 }
